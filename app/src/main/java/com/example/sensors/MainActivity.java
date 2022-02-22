@@ -61,8 +61,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         loadSensorData(sensorEvent);
         SensorManager.getOrientation(rotationMatrix,orientaion);
         Random rnd1=new Random();
-        int n1=rnd1.nextInt(6);
-        image1.setImageResource(images[n1]);
+       // int n1=rnd1.nextInt(6);
+        int n1=10*Math.abs(Math.round(orientaion[0]));
+        if(n1>=0&&n1<6)
+            image1.setImageResource(images[n1]);
         Random rnd2=new Random();
         int n2=rnd2.nextInt(6);
         image2.setImageResource(images[n2]);
